@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Blog_ElasticSearch.Application.Interfaces
 {
-    internal interface IArticleService
+    public interface IArticleService
     {
         Task ArticleIndexingAsync(Article article);
         Task<List<Article>> SearchForArticlesAsync(string query);

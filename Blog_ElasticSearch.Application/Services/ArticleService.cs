@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Blog_ElasticSearch.Application.Services
 {
-    internal class ArticleService: IArticleService
+    public class ArticleService: IArticleService
     {
         private readonly IArticleRepository _articleRepository;
         public ArticleService(IArticleRepository articleRepository) {
