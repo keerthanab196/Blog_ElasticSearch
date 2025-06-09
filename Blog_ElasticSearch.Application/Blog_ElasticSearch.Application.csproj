@@ -8,11 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Blog_ElasticSearch.Domain\Blog_ElasticSearch.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Interfaces\" />
-    <Folder Include="Services\" />
+    <ProjectReference Include="..\Blog_ElasticSearch.Infrastructure\Blog_ElasticSearch.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

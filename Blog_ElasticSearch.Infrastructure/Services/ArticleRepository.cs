@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Blog_ElasticSearch.Infrastructure.Services
 {
-    internal class ArticleRepository: IArticleRepository
+    public class ArticleRepository: IArticleRepository
     {
         private readonly IElasticClient _elasticClient;
         public ArticleRepository(IElasticClient client) 
