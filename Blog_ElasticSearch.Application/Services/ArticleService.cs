@@ -16,13 +16,13 @@ namespace Blog_ElasticSearch.Application.Services
             _articleRepository = articleRepository;
         }
 
-        public Task ArticleIndexingAsync(Article article)
+        public async Task ArticleIndexingAsync(Article article)
         {
-           return _articleRepository.IndexAsync(article);
+           await _articleRepository.IndexAsync(article);
         }
-        public Task<List<Article>> SearchForArticlesAsync(string query)
+        public async Task<List<Article>> SearchForArticlesAsync(string query)
         {
-            return _articleRepository.SearchAsync(query);
+            return await _articleRepository.SearchAsync(query);
         }
     }
 }

@@ -9,6 +9,8 @@
   <ItemGroup>
     <PackageReference Include="Elasticsearch.Net" Version="7.17.4" />
     <PackageReference Include="NEST" Version="7.17.4" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="8.1.4" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="8.1.4" />
   </ItemGroup>
 
   <ItemGroup>

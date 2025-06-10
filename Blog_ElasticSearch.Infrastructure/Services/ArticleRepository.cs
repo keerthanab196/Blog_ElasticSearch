@@ -18,7 +18,13 @@ namespace Blog_ElasticSearch.Infrastructure.Services
         }
         public async Task IndexAsync(Article article)
         {
-            await _elasticClient.IndexDocumentAsync(article);
+            var response =await _elasticClient.IndexDocumentAsync(article);
+
+            if (!response.IsValid)
+            {
+                // Log or throw error here
+                Console.WriteLine("Indexing failed: " + response.DebugInformation);
+            }
         }
 
         public async Task<List<Article>> SearchAsync(string query)
@@ -36,8 +42,15 @@ namespace Blog_ElasticSearch.Infrastructure.Services
            )
           );
 
+            //        var result = await _elasticClient.SearchAsync<Article>(s => s
+            //.Query(q => q.MatchAll()));
+            
             return result.Documents.ToList();
         }
 
+        //public async Task<List<Article>> GetAllArticles()
+        //{
+        //    return await _elasticClient
+        //}
     }
 }
