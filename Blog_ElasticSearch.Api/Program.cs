@@ -51,4 +51,11 @@ app.MapGet("/articles/search", async (string q, IArticleService service) =>
     return Results.Ok(response);
 });
 
+app.MapGet("/articles/searchAnArticle", async (string q, IArticleService service) =>
+{
+    var results = await service.SearchForArticlesAsync(q);
+    var response = results.Select(a => a.MapToArticleResponseDTO());
+    return Results.Ok(response);
+});
+
 app.Run();
